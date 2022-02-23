@@ -13,6 +13,17 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get('/request', function(\Illuminate\Http\Request $request) {
+    $r = $request->query('keyword');
+
+    // if ($r) {
+    //     dd('Faça alguma coisa');
+    // }
+    //
+    dd($r);
+    return 'x';
+});
+
 Route::get('user/{user}', function(\App\Models\User $user) {
     return $user;
 });

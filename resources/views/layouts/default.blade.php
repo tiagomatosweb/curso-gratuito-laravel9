@@ -12,7 +12,7 @@
     >
     <link
         rel="stylesheet"
-        href="{{ asset('css/app.css') }}"
+        href="{{ mix('css/app.css') }}"
     >
     @stack('styles')
     <title>@yield('title', 'Meu título')</title>
@@ -32,7 +32,7 @@
         @yield('content')
     </div>
 
-    <script src="{{ asset('js/app.js') }}"></script>
+    <script src="{{ mix('js/app.js') }}"></script>
     @stack('scripts')
 </body>
 </html>

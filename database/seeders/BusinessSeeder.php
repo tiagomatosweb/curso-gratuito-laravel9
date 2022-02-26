@@ -5,19 +5,18 @@ namespace Database\Seeders;
 use App\Models\Business;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 
-class DatabaseSeeder extends Seeder
+class BusinessSeeder extends Seeder
 {
     /**
-     * Seed the application's database.
+     * Run the database seeds.
      *
      * @return void
      */
     public function run()
     {
-        $this->call([
-            UserSeeder::class,
-            BusinessSeeder::class,
-        ]);
+        Business::factory(2)->create();
+        // DB::table('businesses')->insert([]);
     }
 }

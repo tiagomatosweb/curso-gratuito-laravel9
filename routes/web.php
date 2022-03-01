@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\BusinessController;
+use App\Http\Controllers\PostController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -16,8 +17,11 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('businesses', [BusinessController::class, 'index']);
-Route::get('user/{user}', [UserController::class, 'show'])->name('user.show');
-Route::get('users', [UserController::class, 'index'])->name('user.index');
+Route::get('users/{user}', [UserController::class, 'show'])->name('users.show');
+Route::get('users', [UserController::class, 'index'])->name('users.index');
+
+Route::get('posts', [PostController::class, 'index'])->name('posts.index');
+Route::get('posts/{post}', [PostController::class, 'show'])->name('posts.show');
 
 
 Route::get('/', function () {

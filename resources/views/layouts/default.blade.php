@@ -18,8 +18,6 @@
     <title>@yield('title', 'Meu título')</title>
 </head>
 <body>
-    <h1>Meu layout</h1>
-
     @section('sidebar')
         <div>
             <nav>

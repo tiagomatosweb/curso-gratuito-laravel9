@@ -11,7 +11,11 @@
         @endforeach
         <br><br>
     @endif
-    <form method="POST" action="{{ route('businesses.store') }}">
+    <form
+        enctype="multipart/form-data"
+        method="POST"
+        action="{{ route('businesses.store') }}"
+    >
         @csrf
         <input
             type="text"
@@ -37,12 +41,25 @@
             value="{{ old('address') }}"
         >
         <br>
+        <input
+            type="file"
+            name="logo"
+        >
+        <br>
         <button type="submit">Salvar</button>
     </form>
 
     <hr>
 
     @foreach($businesses as $business)
-        {{ $business->name }} ({{ $business->email }}) <br>
+        @if($business->logo)
+            <img
+                src="{{ \Illuminate\Support\Facades\Storage::disk('public')->url($business->logo) }}"
+                alt=""
+                width="100"
+            >
+        @endif
+        <br>
+        {{ $business->name }} ({{ $business->email }}) <br><br>
     @endforeach
 @endsection

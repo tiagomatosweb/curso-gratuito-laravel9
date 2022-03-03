@@ -10,14 +10,8 @@ class BusinessController extends Controller
 {
     public function index()
     {
-        $businesses = Business::all();
+        $businesses = Business::paginate();
         return view('businesses', compact('businesses'));
-        // \DB::connection()->enableQueryLog();
-        // $business = Business::where('name', 'LIKE', '%jon%')->get();
-        // $query = \DB::getQueryLog();
-        // dd($query);
-        // $business->delete();
-        // dd($business);
     }
 
     public function store(Request $request)

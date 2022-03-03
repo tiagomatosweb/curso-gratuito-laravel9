@@ -62,4 +62,13 @@
         <br>
         {{ $business->name }} ({{ $business->email }}) <br><br>
     @endforeach
+
+    {{ $businesses->onEachSide(1)->links() }}
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
 @endsection

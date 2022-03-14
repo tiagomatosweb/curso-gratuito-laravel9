@@ -1,8 +1,8 @@
 <?php
 
-use App\Http\Controllers\BusinessController;
-use App\Http\Controllers\PostController;
-use App\Http\Controllers\UserController;
+use App\Http\Controllers\AdminProductController;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,15 +16,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('businesses', [BusinessController::class, 'index'])->name('businesses.index');
-Route::post('businesses', [BusinessController::class, 'store'])->name('businesses.store');
-Route::get('users/{user}', [UserController::class, 'show'])->name('users.show');
-Route::get('users', [UserController::class, 'index'])->name('users.index');
+Route::get('/', [HomeController::class, 'index']);
+Route::get('/product', [ProductController::class, 'show']);
 
-Route::get('posts', [PostController::class, 'index'])->name('posts.index');
-Route::get('posts/{post}', [PostController::class, 'show'])->name('posts.show');
-
-
-Route::get('/', function () {
-    return view('welcome');
-})->name('home');
+// Admin
+Route::get('/admin/products', [AdminProductController::class, 'index']);
+Route::get('/admin/products/edit', [AdminProductController::class, 'edit']);

@@ -5,7 +5,7 @@
         <div class="container px-5 py-24 mx-auto">
             <div class="lg:w-2/4 w-full mx-auto overflow-auto">
                 <div class="flex items-center justify-between mb-2">
-                    <h1 class="text-2xl font-medium title-font mb-2 text-gray-900">Editar produto</h1>
+                    <h1 class="text-2xl font-medium title-font mb-2 text-gray-900">Adicionar produto</h1>
                 </div>
 
                 <form>
